@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Multiple AJAX</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
+$.ajax({
+    url: "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=CG7SUCGbzciNUo1qz0rc4WieoMRbMYUP",
+       method: "GET"
+    }).then(function(response) {
+        console.log(response);
+        console.log(response.response.docs[0].headline.main);
+        console.log(response.response.docs[0].snippet);
+        console.log(response.response.docs[0].byline.person[0]);
+        console.log(response.response.docs[0].pub_date)
+     });
+
+     $("#XXX").append(XXX);
+   
+
+</script>
+
+</body>
+
+</html>
